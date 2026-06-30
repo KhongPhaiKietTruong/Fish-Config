@@ -1,6 +1,6 @@
 if status is-interactive
     # No greeting
-    set fish_greeting
+    #set fish_greeting
     #
     # Use starship
     function starship_transient_prompt_func
@@ -49,4 +49,17 @@ function cdi
     if test -n "$dir"
         nvim $dir
     end
+end
+
+# Lời chào khi mở Terminal
+function fish_greeting
+    set_color 7fc8ff
+    echo '  _             _   _                                 '
+    echo ' | | _ (_) ___ | |_| |_ _ __ _   _  ___  ____   ____ '
+    echo " | |/ /| |/ _ \| __| __| '__| | | |/ _ \|  _ \ / _  |"
+    echo ' |   < | |  __/| |_| |_| |  | |_| | (_) | | | | (_| |'
+    echo ' |_|\_\|_|\___| \__|\__|_|   \____|\___/|_| |_|\__, |'
+    echo '                                               |___/'
+    set_color normal
+    command -v fastfetch &>/dev/null && fastfetch --key-padding-left 4
 end
